@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Rohit Laundry - Best Laundry & Steam Press Service in Katargam, Surat</title>
+    <meta name="description" content="Rohit Laundry offers premium laundry, steam press, and dry cleaning services in Katargam, Surat. We provide eco-friendly cleaning, free home pickup & delivery. Call +91-9601129595 for the best laundry near you.">
+    <meta name="keywords" content="laundry near me, laundry in Surat, steam press in Surat, dry cleaning in Surat, best laundry in Katargam Surat, hotel laundry Surat, Rohit Laundry">
+    <meta name="author" content="Rohit Laundry">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.rohitlaundry.com/">
+    <meta property="og:title" content="Rohit Laundry - Best Laundry & Steam Press Service in Katargam, Surat">
+    <meta property="og:description" content="Premium laundry, steam press, and dry cleaning services in Katargam, Surat with free home pickup & delivery.">
+    <meta property="og:image" content="https://i.postimg.cc/0yqCdvqG/Laundry-naer-me.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.rohitlaundry.com/">
+    <meta property="twitter:title" content="Rohit Laundry - Best Laundry & Steam Press Service in Katargam, Surat">
+    <meta property="twitter:description" content="Premium laundry, steam press, and dry cleaning services in Katargam, Surat with free home pickup & delivery.">
+    <meta property="twitter:image" content="https://i.postimg.cc/0yqCdvqG/Laundry-naer-me.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.postimg.cc/0yqCdvqG/Laundry-naer-me.png" type="image/png">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS & Tailwind Config -->
+    <style>
+        :root {
+            --primary-color: #0d47a1; /* Deep Blue */
+            --secondary-color: #ffc107; /* Amber Yellow */
+            --text-dark: #1f2937;
+            --text-light: #f9fafb;
+            --background-light: #ffffff;
+            --background-dark: #111827;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--background-light);
+        }
+
+        .bg-primary { background-color: var(--primary-color); }
+        .text-primary { color: var(--primary-color); }
+        .border-primary { border-color: var(--primary-color); }
+
+        .bg-secondary { background-color: var(--secondary-color); }
+        .text-secondary { color: var(--secondary-color); }
+        .border-secondary { border-color: var(--secondary-color); }
+
+        .btn-primary {
+            @apply px-6 py-3 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-blue-800 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:ring-4 hover:ring-blue-200;
+        }
+
+        .btn-secondary {
+            @apply px-6 py-3 bg-secondary text-primary font-semibold rounded-lg shadow-md hover:bg-amber-500 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:ring-4 hover:ring-amber-200;
+        }
+
+        .section-title {
+            @apply text-3xl md:text-4xl font-bold text-center text-primary mb-2;
+        }
+
+        .section-subtitle {
+            @apply text-center text-gray-600 mb-10 max-w-2xl mx-auto;
+        }
+        
+        /* Animation on Scroll */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.8s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+        }
+        
+        .slide-in-bottom {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .slide-in-bottom.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Testimonial Slider */
+        .testimonial-slider .slick-dots li button:before {
+            font-size: 12px;
+            color: var(--primary-color);
+        }
+        .testimonial-slider .slick-dots li.slick-active button:before {
+            color: var(--secondary-color);
+        }
+        
+        /* Logo Animation */
+        @keyframes spin-and-settle {
+            0% {
+                transform: rotate(-180deg) scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: rotate(0deg) scale(1);
+                opacity: 1;
+            }
+        }
+        .logo-onload-animate {
+            animation: spin-and-settle 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        /* Nav links hover effect */
+        .nav-link-hover {
+            @apply relative py-1;
+        }
+        .nav-link-hover::after {
+            @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all duration-300;
+        }
+        .nav-link-hover:hover::after {
+            @apply w-full;
+        }
+
+        /* How it works hover effect */
+        .step-item:hover .step-circle {
+            @apply transform scale-110 bg-primary text-white shadow-xl border-secondary;
+        }
+
+        /* Standard pricing card hover */
+        .pricing-card-standard:hover {
+            @apply shadow-2xl border-secondary transform -translate-y-2;
+        }
+
+        /* Social Icon Hover */
+        .social-icon-hover:hover {
+            @apply transform scale-125 text-secondary;
+        }
+    </style>
+
+    <!-- JSON-LD Schema for Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LaundryOrDryCleaning",
+      "name": "Rohit Laundry",
+      "description": "Professional laundry, steam press, and dry cleaning services in Katargam, Surat, with free home pickup and delivery.",
+      "image": "https://i.postimg.cc/0yqCdvqG/Laundry-naer-me.png",
+      "@id": "",
+      "url": "https://www.rohitlaundry.com",
+      "telephone": "+91-9601129595",
+      "email": "rohitlaundry101@gmail.com",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Katargam",
+        "addressLocality": "Surat",
+        "addressRegion": "GJ",
+        "postalCode": "395004",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 21.2266,
+        "longitude": 72.8312
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "21:00"
+      },
+      "sameAs": [
+        "https://www.instagram.com/rohitlaundry"
+      ] 
+    }
+    </script>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3">
+                <div class="flex items-center">
+                    <img src="https://i.postimg.cc/0yqCdvqG/Laundry-naer-me.png" alt="Rohit Laundry Logo" class="h-12 w-auto mr-3 logo-onload-animate">
+                    <span class="text-2xl font-bold text-primary">Rohit Laundry</span>
+                </div>
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#services" class="text-gray-600 hover:text-primary transition nav-link-hover">Services</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-primary transition nav-link-hover">Pricing</a>
+                    <a href="#contact" class="text-gray-600 hover:text-primary transition nav-link-hover">Contact</a>
+                    <a href="tel:+919601129595" class="btn-primary">Call Now</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <a href="#services" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100">Services</a>
+            <a href="#pricing" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100">Pricing</a>
+            <a href="#contact" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100">Contact</a>
+            <a href="tel:+919601129595" class="block py-2 px-4 text-sm bg-primary text-white text-center rounded-b-lg">Call Now</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative bg-blue-50 py-20 md:py-32">
+             <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('https://placehold.co/1920x1080/e0f7fa/e0f7fa?text=.');"></div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-primary leading-tight mb-4 slide-in-bottom">Premium Laundry & Dry Cleaning Services in Surat</h1>
+                <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-8 slide-in-bottom" style="transition-delay: 0.2s;">Experience spotless cleaning with free pickup and delivery in Katargam, Surat. Your clothes, our care.</p>
+                <div class="flex justify-center items-center space-x-4 slide-in-bottom" style="transition-delay: 0.4s;">
+                    <a href="#booking" class="btn-primary text-lg">Schedule Pickup</a>
+                    <a href="#services" class="btn-secondary text-lg">Our Services</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Services Section -->
+        <section id="services" class="py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title">Our Expert Services</h2>
+                <h3 class="section-subtitle">Comprehensive cleaning solutions for all your needs. From daily wear to special garments, we handle it all. Ranking #1 for "laundry in Surat".</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Service Card -->
+                    <div class="service-card text-center p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 slide-in-bottom">
+                        <div class="bg-primary text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                           <i class="fas fa-tshirt fa-2x"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Laundry Services</h4>
+                        <p class="text-gray-600">Perfect for your daily wear. We wash, dry, and fold with utmost care.</p>
+                    </div>
+                     <!-- Service Card -->
+                    <div class="service-card text-center p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 slide-in-bottom" style="transition-delay: 0.1s;">
+                        <div class="bg-primary text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                           <i class="fas fa-water fa-2x"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Steam Press</h4>
+                        <p class="text-gray-600">Crisp, wrinkle-free finish for Kurtis, Sarees, Shirts, and more. A top choice for "steam press in Surat".</p>
+                    </div>
+                     <!-- Service Card -->
+                    <div class="service-card text-center p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 slide-in-bottom" style="transition-delay: 0.2s;">
+                        <div class="bg-primary text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                           <i class="fas fa-user-tie fa-2x"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Dry Cleaning</h4>
+                        <p class="text-gray-600">Gentle yet effective cleaning for your delicate and designer wear. Best "dry cleaning in Surat".</p>
+                    </div>
+                     <!-- Service Card -->
+                    <div class="service-card text-center p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 slide-in-bottom" style="transition-delay: 0.3s;">
+                        <div class="bg-primary text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                           <i class="fas fa-hotel fa-2x"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Hotel Linen Cleaning</h4>
+                        <p class="text-gray-600">Specialized services for hotels, ensuring fresh and hygienic bedsheets & linens. Trusted for "hotel laundry Surat".</p>
+                    </div>
+                     <!-- Service Card -->
+                    <div class="service-card text-center p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 slide-in-bottom" style="transition-delay: 0.4s;">
+                        <div class="bg-primary text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                           <i class="fas fa-bed fa-2x"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Blanket & Quilt Cleaning</h4>
+                        <p class="text-gray-600">Deep cleaning for your heavy winter wear, making them fresh and cozy.</p>
+                    </div>
+                     <!-- Service Card -->
+                    <div class="service-card text-center p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 slide-in-bottom" style="transition-delay: 0.5s;">
+                        <div class="bg-primary text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                           <i class="fas fa-couch fa-2x"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Sofa & Carpet Cleaning</h4>
+                        <p class="text-gray-600">Revitalize your living space with our professional upholstery cleaning services.</p>
+                    </div>
+                    <!-- Service Card -->
+                    <div class="service-card text-center p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 slide-in-bottom" style="transition-delay: 0.6s;">
+                        <div class="bg-primary text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                           <i class="fas fa-shoe-prints fa-2x"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Shoe Cleaning</h4>
+                        <p class="text-gray-600">Restore the look of your favorite footwear with our expert shoe cleaning.</p>
+                    </div>
+                    <!-- Service Card -->
+                    <div class="service-card text-center p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 slide-in-bottom" style="transition-delay: 0.7s;">
+                        <div class="bg-primary text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                           <i class="fas fa-shipping-fast fa-2x"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Home Pickup & Delivery</h4>
+                        <p class="text-gray-600">Convenience at your doorstep. Schedule a pickup and we'll handle the rest.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section id="why-choose-us" class="py-20 bg-blue-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="fade-in">
+                        <img src="https://placehold.co/600x450/3b82f6/ffffff?text=Eco-Friendly+Cleaning" alt="Eco-friendly laundry process illustration" class="rounded-xl shadow-2xl w-full">
+                    </div>
+                    <div class="slide-in-bottom">
+                        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Why We Are The Best Laundry in Katargam, Surat</h2>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-leaf text-green-500 text-2xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="text-xl font-semibold text-gray-800">Eco-Friendly Cleaning</h4>
+                                    <p class="text-gray-600">We use biodegradable detergents that are gentle on your clothes and the planet.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-hands-holding-child text-primary text-2xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="text-xl font-semibold text-gray-800">Expert Care</h4>
+                                    <p class="text-gray-600">Our experienced team handles each garment with precision, ensuring the best treatment for every fabric type.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-door-open text-secondary text-2xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="text-xl font-semibold text-gray-800">Free Doorstep Pickup & Delivery</h4>
+                                    <p class="text-gray-600">Save time and effort. We collect and deliver your laundry right at your doorstep, free of charge.</p>
+                                </div>
+                            </li>
+                             <li class="flex items-start">
+                                <i class="fas fa-tachometer-alt text-red-500 text-2xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="text-xl font-semibold text-gray-800">Fast & On-Time</h4>
+                                    <p class="text-gray-600">With our Express and Standard delivery options, you get your fresh clothes back when you need them.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title">Get Fresh Laundry in 4 Easy Steps</h2>
+                <h3 class="section-subtitle">A seamless experience from booking to delivery.</h3>
+                <div class="relative">
+                    <!-- Dashed line for desktop -->
+                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 border-t-2 border-dashed border-gray-300 -translate-y-1/2"></div>
+                    <div class="grid md:grid-cols-4 gap-8 relative">
+                        <!-- Step 1 -->
+                        <div class="text-center slide-in-bottom step-item">
+                            <div class="relative">
+                                <div class="bg-secondary text-primary rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4 text-3xl font-bold shadow-lg border-4 border-white transition-all duration-300 step-circle">1</div>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Schedule Pickup</h4>
+                            <p class="text-gray-600">Book a slot online or call us. It's quick and easy.</p>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="text-center slide-in-bottom step-item" style="transition-delay: 0.2s;">
+                            <div class="relative">
+                                <div class="bg-secondary text-primary rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4 text-3xl font-bold shadow-lg border-4 border-white transition-all duration-300 step-circle">2</div>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Doorstep Pickup</h4>
+                            <p class="text-gray-600">Our rider will arrive at your location as per the scheduled time.</p>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="text-center slide-in-bottom step-item" style="transition-delay: 0.4s;">
+                            <div class="relative">
+                                <div class="bg-secondary text-primary rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4 text-3xl font-bold shadow-lg border-4 border-white transition-all duration-300 step-circle">3</div>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Professional Cleaning</h4>
+                            <p class="text-gray-600">We use advanced machines and premium products to clean your clothes.</p>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="text-center slide-in-bottom step-item" style="transition-delay: 0.6s;">
+                            <div class="relative">
+                                <div class="bg-secondary text-primary rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4 text-3xl font-bold shadow-lg border-4 border-white transition-all duration-300 step-circle">4</div>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">On-Time Delivery</h4>
+                            <p class="text-gray-600">Receive fresh, clean, and perfectly folded clothes back at your doorstep.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-20 bg-blue-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title">Flexible Pricing Plans</h2>
+                <h3 class="section-subtitle">Choose the delivery option that best suits your needs.</h3>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+                    <!-- Standard Plan -->
+                    <div class="w-full md:w-1/3 p-8 bg-white rounded-2xl shadow-xl border-2 border-gray-200 text-center slide-in-bottom pricing-card-standard transition-all duration-300">
+                        <h4 class="text-2xl font-bold text-primary mb-2">Standard Delivery</h4>
+                        <p class="text-gray-500 mb-6">Cost-effective & reliable</p>
+                        <p class="text-5xl font-extrabold text-gray-800 mb-6">48 <span class="text-lg font-medium">hours</span></p>
+                        <ul class="text-left space-y-3 mb-8">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i>Perfect for regular laundry needs</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i>Free Pickup & Delivery</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i>Expert Folding & Packaging</li>
+                        </ul>
+                        <a href="#booking" class="btn-secondary w-full">Book Now</a>
+                    </div>
+                    <!-- Express Plan -->
+                    <div class="w-full md:w-1/3 p-8 bg-primary text-white rounded-2xl shadow-2xl border-2 border-secondary text-center transform scale-105 slide-in-bottom" style="transition-delay: 0.2s;">
+                        <span class="bg-secondary text-primary text-xs font-bold px-3 py-1 rounded-full uppercase absolute -top-4 right-8">Popular</span>
+                        <h4 class="text-2xl font-bold mb-2">Express Delivery</h4>
+                        <p class="text-blue-200 mb-6">When you need it fast</p>
+                        <p class="text-5xl font-extrabold mb-6">24 <span class="text-lg font-medium">hours</span></p>
+                        <ul class="text-left space-y-3 mb-8">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-3"></i>Ideal for urgent requirements</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-3"></i>Priority Processing</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-3"></i>Free Pickup & Delivery</li>
+                        </ul>
+                        <a href="#booking" class="btn-primary bg-white text-primary hover:bg-gray-100 w-full">Go Express</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <h3 class="section-subtitle">We are proud to be the "best laundry in Katargam Surat". Here's why.</h3>
+                <div class="testimonial-slider-container max-w-4xl mx-auto">
+                    <div class="testimonial-slider">
+                        <!-- Testimonial 1 -->
+                        <div class="p-4">
+                            <div class="bg-blue-50 p-8 rounded-xl shadow-lg text-center">
+                                <img src="https://placehold.co/100x100/3b82f6/ffffff?text=AP" alt="Customer Anjali Patel" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-secondary">
+                                <p class="text-gray-600 italic mb-4">"Rohit Laundry is a lifesaver! Their pickup and delivery service is always on time, and my clothes come back perfectly clean and fresh. Highly recommended!"</p>
+                                <div class="text-secondary mb-2">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <h4 class="font-bold text-primary">Anjali Patel</h4>
+                                <p class="text-sm text-gray-500">Katargam Resident</p>
+                            </div>
+                        </div>
+                        <!-- Testimonial 2 -->
+                         <div class="p-4">
+                            <div class="bg-blue-50 p-8 rounded-xl shadow-lg text-center">
+                                <img src="https://placehold.co/100x100/3b82f6/ffffff?text=RS" alt="Customer Rahul Shah" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-secondary">
+                                <p class="text-gray-600 italic mb-4">"The steam press service for my sarees is exceptional. They handle delicate fabrics with such care. Definitely the best laundry service I've used in Surat."</p>
+                                <div class="text-secondary mb-2">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <h4 class="font-bold text-primary">Rahul Shah</h4>
+                                <p class="text-sm text-gray-500">Local Businessman</p>
+                            </div>
+                        </div>
+                         <!-- Testimonial 3 -->
+                         <div class="p-4">
+                            <div class="bg-blue-50 p-8 rounded-xl shadow-lg text-center">
+                                <img src="https://placehold.co/100x100/3b82f6/ffffff?text=PG" alt="Priya Gupta, Hotel Manager" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-secondary">
+                                <p class="text-gray-600 italic mb-4">"We use Rohit Laundry for all our hotel linens. Their service is reliable, professional, and helps us maintain high standards of hygiene for our guests."</p>
+                                <div class="text-secondary mb-2">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <h4 class="font-bold text-primary">Priya Gupta</h4>
+                                <p class="text-sm text-gray-500">Hotel Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instagram Feed Section -->
+        <section id="instagram" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title">Follow Our Fresh Journey</h2>
+                <h3 class="section-subtitle">Stay updated with our latest offers and behind-the-scenes action on Instagram.</h3>
+                <!-- The LightWidget embed code will go here -->
+                <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+                <iframe src="//lightwidget.com/widgets/e387349191315e19b53272e5052d3a31.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+                 <div class="text-center mt-8">
+                    <a href="https://www.instagram.com/rohitlaundry" target="_blank" rel="noopener noreferrer" class="btn-primary">Follow @rohitlaundry</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Online Booking Form -->
+        <section id="booking" class="py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="slide-in-bottom">
+                         <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Book Your Pickup Now!</h2>
+                         <p class="text-gray-600 mb-8">Fill out the form below and our team will get in touch with you shortly to confirm your laundry pickup. It's that simple to get started with the best laundry near you.</p>
+                         <img src="https://placehold.co/500x350/e0f7fa/0d47a1?text=Fast+Booking" alt="Illustration showing a person booking laundry service on a phone" class="rounded-xl shadow-lg w-full">
+                    </div>
+                    <div class="bg-blue-50 p-8 rounded-2xl shadow-xl slide-in-bottom" style="transition-delay: 0.2s;">
+                        <form id="booking-form">
+                            <div class="space-y-4">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                                    <input type="text" name="name" id="name" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                                </div>
+                                <div>
+                                    <label for="mobile" class="block text-sm font-medium text-gray-700">Mobile Number</label>
+                                    <input type="tel" name="mobile" id="mobile" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                                </div>
+                                 <div>
+                                    <label for="address" class="block text-sm font-medium text-gray-700">Full Address</label>
+                                    <textarea name="address" id="address" rows="3" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"></textarea>
+                                </div>
+                                <div>
+                                    <label for="service-type" class="block text-sm font-medium text-gray-700">Service Type</label>
+                                    <select id="service-type" name="service-type" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                                        <option>Laundry Service</option>
+                                        <option>Steam Press</option>
+                                        <option>Dry Cleaning</option>
+                                        <option>Blanket/Quilt Cleaning</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                     <div>
+                                        <label for="date" class="block text-sm font-medium text-gray-700">Pickup Date</label>
+                                        <input type="date" name="date" id="date" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                                    </div>
+                                    <div>
+                                        <label for="time" class="block text-sm font-medium text-gray-700">Pickup Time</label>
+                                        <input type="time" name="time" id="time" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn-primary w-full py-3 mt-4">Submit Request</button>
+                            </div>
+                        </form>
+                         <div id="form-message" class="mt-4 text-center"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-primary text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <!-- About -->
+                <div class="space-y-4">
+                    <div class="flex items-center">
+                        <img src="https://i.postimg.cc/0yqCdvqG/Laundry-naer-me.png" alt="Rohit Laundry Logo" class="h-10 w-auto mr-2 bg-white rounded-full p-1">
+                        <h2 class="text-2xl font-bold">Rohit Laundry</h2>
+                    </div>
+                    <p class="text-blue-200">Your trusted partner for all laundry and dry cleaning needs in Surat. We are committed to providing quality service with a smile.</p>
+                </div>
+                <!-- Services -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-secondary">Our Services</h3>
+                    <ul class="space-y-2 text-blue-200">
+                        <li><a href="#services" class="hover:text-secondary hover:underline transition">Laundry Services</a></li>
+                        <li><a href="#services" class="hover:text-secondary hover:underline transition">Steam Press</a></li>
+                        <li><a href="#services" class="hover:text-secondary hover:underline transition">Dry Cleaning</a></li>
+                        <li><a href="#services" class="hover:text-secondary hover:underline transition">Hotel Linen Cleaning</a></li>
+                        <li><a href="#services" class="hover:text-secondary hover:underline transition">Sofa & Carpet Cleaning</a></li>
+                    </ul>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-secondary">Quick Links</h3>
+                     <ul class="space-y-2 text-blue-200">
+                        <li><a href="#why-choose-us" class="hover:text-secondary hover:underline transition">Why Choose Us</a></li>
+                        <li><a href="#how-it-works" class="hover:text-secondary hover:underline transition">How It Works</a></li>
+                        <li><a href="#pricing" class="hover:text-secondary hover:underline transition">Pricing</a></li>
+                        <li><a href="#booking" class="hover:text-secondary hover:underline transition">Book Now</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Info -->
+                <div>
+                     <h3 class="text-xl font-semibold mb-4 text-secondary">Contact Us</h3>
+                     <ul class="space-y-3 text-blue-200">
+                        <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-3"></i><span>Katargam, Surat, Gujarat</span></li>
+                        <li class="flex items-center"><i class="fas fa-phone-alt mr-3"></i><a href="tel:+919601129595" class="hover:text-secondary hover:underline transition">+91-9601129595</a></li>
+                        <li class="flex items-center"><i class="fas fa-envelope mr-3"></i><a href="mailto:rohitlaundry101@gmail.com" class="hover:text-secondary hover:underline transition">rohitlaundry101@gmail.com</a></li>
+                     </ul>
+                     <div class="flex space-x-4 mt-4">
+                        <a href="https://www.instagram.com/rohitlaundry" target="_blank" rel="noopener noreferrer" class="text-2xl transition social-icon-hover"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/919601129595" target="_blank" rel="noopener noreferrer" class="text-2xl transition social-icon-hover"><i class="fab fa-whatsapp"></i></a>
+                     </div>
+                </div>
+            </div>
+            <div class="border-t border-blue-700 text-center pt-6 text-blue-300 text-sm">
+                <p>&copy; <span id="year"></span> Rohit Laundry. All Rights Reserved. Designed with ❤️.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Floating Buttons (Mobile) -->
+    <div class="md:hidden fixed bottom-4 right-4 flex flex-col space-y-3 z-40">
+        <a href="https://wa.me/919601129595?text=Hello%20Rohit%20Laundry,%20I'd%20like%20to%20inquire%20about%20your%20services." target="_blank" class="bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg text-2xl transform hover:scale-110 transition">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+         <a href="tel:+919601129595" class="bg-blue-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg text-2xl transform hover:scale-110 transition">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+    </div>
+
+    <!-- Slick Slider for Testimonials -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+            
+            // Testimonial Slider
+            $('.testimonial-slider').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                arrows: false,
+                adaptiveHeight: true
+            });
+
+            // Animation on Scroll
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const elementsToAnimate = document.querySelectorAll('.fade-in, .slide-in-bottom');
+            elementsToAnimate.forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Set min date for date picker
+            const dateInput = document.getElementById('date');
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.setAttribute('min', today);
+
+            // Booking Form Submission
+            const bookingForm = document.getElementById('booking-form');
+            const formMessage = document.getElementById('form-message');
+
+            bookingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                formMessage.textContent = 'Submitting...';
+                formMessage.className = 'text-blue-600';
+
+                // In a real application, you would send this data to a server.
+                // Here, we'll just simulate a success message.
+                setTimeout(() => {
+                    formMessage.textContent = 'Thank you! Your pickup request has been received. We will contact you shortly.';
+                    formMessage.className = 'text-green-600 font-semibold';
+                    bookingForm.reset();
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+</html>
+
