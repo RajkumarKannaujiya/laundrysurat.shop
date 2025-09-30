@@ -1,2 +1,4 @@
+This file gives instructions to Large Language Models (LLMs) like Google's Gemini.
+It allows AI models to learn from your website content, which can help in voice search and AI-powered answers.
 User-agent: *
 Allow: /
