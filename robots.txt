@@ -1,0 +1,7 @@
+This file tells search engine crawlers which pages they can or cannot access.
+Allowing all crawlers to access the entire site ensures full visibility.
+User-agent: *
+Allow: /
+
+This line points crawlers to the location of your sitemap.
+Sitemap: https://www.google.com/search?q=https://www.rohitlaundry.com/sitemap.xml
