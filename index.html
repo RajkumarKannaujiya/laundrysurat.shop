@@ -6,12 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <!-- Primary SEO -->
-  <title>Rohit Laundry: #1 Steam Press & Laundry Service in Surat | Free Pickup</title>
+  <title>Rohit Laundry: #1 Steam Press & Laundry Service in Surat</title>
   <meta name="description" content="Surat's #1 laundry service for B2B bulk steam press and online laundry. We offer dry cleaning, saree roll press, and sofa cleaning in Katargam, Adajan, Vesu & more with FREE pickup. Call Now!" />
   <meta name="keywords" content="laundry near me, laundry in Surat, steam press in Surat, dry clean in Surat, saree roll press Surat, best laundry Surat, hotel laundry service Surat, sofa cleaning Surat, carpet cleaning Surat, blanket washing Surat, bulk steam press Surat, commercial laundry Surat, garment finishing Surat, laundry for e-commerce, Rohit Laundry" />
   <meta name="author" content="Rohit Laundry" />
   <meta name="robots" content="index,follow" />
-  <meta name="sitemap" content="/sitemap.xml" />
+  
+  <!-- Canonical Tag -->
+  <link rel="canonical" href="https://laundrysurat.shop/" />
 
 
   <!-- Favicon -->
@@ -21,7 +23,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Rohit Laundry: Surat's Top-Rated Laundry & B2B Steam Press Service" />
   <meta property="og:description" content="Get professional garment care in Surat. We specialize in bulk steam press for manufacturers and offer premium online laundry & dry cleaning with free home pickup." />
-  <meta property="og:url" content="https://www.rohitlaundry.com/" />
+  <meta property="og:url" content="https://laundrysurat.shop/" />
   <meta property="og:image" content="https://i.ibb.co/yCVypgZ/2.jpg" />
   <meta property="og:site_name" content="Rohit Laundry" />
 
@@ -36,9 +38,9 @@
   {
     "@context":"https://schema.org",
     "@type":"DryCleaningOrLaundry",
-    "@id":"https://www.rohitlaundry.com/#business",
+    "@id":"https://laundrysurat.shop/#business",
     "name":"Rohit Laundry",
-    "url":"https://www.rohitlaundry.com/",
+    "url":"https://laundrysurat.shop/",
     "logo":"https://i.postimg.cc/0yqCdvqG/Laundry-naer-me.png",
     "image":"https://i.ibb.co/yCVypgZ/2.jpg",
     "telephone":"+91-9601129595",
@@ -110,6 +112,7 @@
     .faq-item.open .faq-answer { max-height: 200px; margin-top: 1rem; }
     .faq-item .faq-icon { transition: transform 0.3s ease-out; }
     .faq-item.open .faq-icon { transform: rotate(180deg); }
+    .mySwiper .swiper-button-next, .mySwiper .swiper-button-prev { color: white; }
 
     /* Bubble Animation Styles */
     #bubble-container {
@@ -364,8 +367,9 @@
     <section id="about" class="page-section py-16 bg-white overflow-hidden">
         <div class="max-w-9xl px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-[var(--primary)]">What Our 5000+ Happy Customers in Surat Say</h2>
-                <p class="text-gray-600 mt-3 text-lg">We are proud to be the trusted laundry partner for families and businesses across the city.</p>
+                <h2 class="text-3xl font-bold text-[var(--primary)]">About Rohit Laundry: Surat's Garment Care Experts</h2>
+                <p class="text-gray-600 mt-4 text-lg max-w-4xl mx-auto">Founded with a mission to provide professional and reliable garment care to the textile hub of Surat, Rohit Laundry has grown into the city's most trusted laundry partner. We combine advanced technology with a passion for fabric care, serving both individual households and the demanding needs of the commercial sector. Our commitment to quality, hygiene, and timely delivery has made us the #1 choice for over 5000 happy customers.</p>
+                <h3 class="text-2xl font-bold text-gray-800 mt-10">What Our Customers Say</h3>
             </div>
             <div class="swiper testimonials-swiper">
                 <div class="swiper-wrapper pb-12">
@@ -543,10 +547,6 @@
             speed: 800, 
             autoplay: { delay: 4000, disableOnInteraction: false }, 
             pagination: { el: '.swiper-pagination', clickable: true },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
         });
         new Swiper('.testimonials-swiper', { loop: true, speed: 600, autoplay: { delay: 4000, disableOnInteraction: false }, slidesPerView: 1, spaceBetween: 20, pagination: { el: '.swiper-pagination', clickable: true }, breakpoints: { 640: { slidesPerView: 2, spaceBetween: 30 }, 1024: { slidesPerView: 3, spaceBetween: 40 } } });
 
