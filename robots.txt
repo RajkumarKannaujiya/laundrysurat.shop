@@ -4,4 +4,4 @@ User-agent: *
 Allow: /
 
 This line points crawlers to the location of your sitemap.
-Sitemap: https://www.google.com/search?q=https://www.rohitlaundry.com/sitemap.xml
+Sitemap: https://www.google.com/search?q=https://laundrysurat.shop/sitemap.xml
